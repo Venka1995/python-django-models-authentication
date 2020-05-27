@@ -30,9 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# SILENCED_SYSTEM_CHECKS should be set to an empty list once the 
+# SILENCED_SYSTEM_CHECKS should be set to an empty list once the
 # custom user model is setup. This is only added to support testing.
-SILENCED_SYSTEM_CHECKS = ['fields.E304'] 
+SILENCED_SYSTEM_CHECKS = ['fields.E304']
 
 # Application definition
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'mainapp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blogproj.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -88,7 +88,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -107,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -131,3 +129,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
