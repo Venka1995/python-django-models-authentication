@@ -20,8 +20,5 @@ class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     tags = models.ManyToManyField('Tag', related_name='posts')
 
-    class clean():
-        self.clean
-
     def __str__(self):
         return self.name
